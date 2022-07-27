@@ -69,7 +69,7 @@ Foi feito o esquemático da placa utilizando o Atmega328P, juntamente dos sensor
 
 ![Figura 8.png](https://www.imagemhost.com.br/images/2022/07/27/4.png)
 
-A placa tem dimensão de aproximadamente 9x9cm, para caber dentro da estrutura do alimentador. O modelo 3D dela é observado na figura 9.
+A placa tem dimensão de aproximadamente 9,2x8cm, para caber dentro da estrutura do alimentador. O modelo 3D dela é observado na figura 9.
 
 ![Figura 9](https://www.imagemhost.com.br/images/2022/07/27/2.png)
 
