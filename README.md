@@ -16,7 +16,7 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
 
    Para empurrar a ração ao pote, foi feita em uma impressora 3D uma hélice helicoidal, fixada no servo motor. A ração cai sobre ela, e com o auxílio do motor, a quantidade especificada de ração cai sobre o pote. O design do helicóide foi retirado de um [site](https://www.thingiverse.com/thing:27854) com projeto similar, e ajustado para o tamanho do cano PVC usado. A figura 4 mostra as duas hélices que foram impressas, de 13 e 9cm, respectivamente. A de 13cm foi a utilizada no projeto, enquanto a de 9, como foi resultado de uma impressão falha, foi usada como teste para furos para o encaixe do motor.
   
-[![Figura 4](https://www.imagemhost.com.br/images/2022/07/26/helicoide-1.th.jpg)](https://www.imagemhost.com.br/image/rTlaZK)
+[![Figura 4](https://www.imagemhost.com.br/images/2022/07/26/helicoide-1.md.jpg)](https://www.imagemhost.com.br/image/rTlaZK)
 
 
 ### 1.2 Motor
@@ -54,12 +54,12 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
   
   Foi impresso em 3D uma base para a célula de peso, seguindo um [modelo](https://www.thingiverse.com/thing:2624188) achado para o mesmo tipo de célula, de acordo com um [tutorial](https://circuitjournal.com/50kg-load-cells-with-HX711#1x50) para esta aplicação. A figura 5 mostra como ficou a base para o nosso sensor.
   
-[![Figura 5](https://www.imagemhost.com.br/images/2022/07/27/base-cel.th.jpg)](https://www.imagemhost.com.br/image/rTBF9Y)
+[![Figura 5](https://www.imagemhost.com.br/images/2022/07/27/base-cel.md.jpg)](https://www.imagemhost.com.br/image/rTBF9Y)
 
 Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apresentar resultos extremamentes imprecisos, e não conseguia fixar em uma faixa específica de valores. Dado este enorme problema, a equipe optou por comprar uma balança de peso de alimentos, desmontar a mesma e utilizar a célula de carga + a base desta, como mostra a figura 6. A célula em questão é apresentada na figura 7, é de formato diferente da original e suporta até 10kg.
 
-[![Figura 6](https://www.imagemhost.com.br/images/2022/07/27/sensor-peso-2.th.jpg)](https://www.imagemhost.com.br/image/rTB4zI)
-[![Figura 7](https://www.imagemhost.com.br/images/2022/07/27/celula-carga.th.jpg)](https://www.imagemhost.com.br/image/rTBMxS)
+[![Figura 6](https://www.imagemhost.com.br/images/2022/07/27/sensor-peso-2.md.jpg)](https://www.imagemhost.com.br/image/rTB4zI)
+[![Figura 7](https://www.imagemhost.com.br/images/2022/07/27/celula-carga.md.jpg)](https://www.imagemhost.com.br/image/rTBMxS)
 
 Esta troca de célula e base foi essencial para o andamento do projeto, pois os resultados foram muito mais precisos e a faixa de valores não alterava conforme o tempo.
   
