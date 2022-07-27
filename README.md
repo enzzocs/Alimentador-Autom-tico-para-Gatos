@@ -56,7 +56,7 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
   
 [![Figura 5](https://www.imagemhost.com.br/images/2022/07/27/base-cel.md.jpg)](https://www.imagemhost.com.br/image/rTBF9Y)
 
-Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apresentar resultos extremamentes imprecisos, e não conseguia fixar em uma faixa específica de valores. Dado este enorme problema, a equipe optou por comprar uma balança de peso de alimentos, desmontar a mesma e utilizar a célula de carga + a base desta, como mostra a figura 6. A célula em questão é apresentada na figura 7, é de formato diferente da original e suporta até 10kg.
+Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apresentar resultados extremamentes imprecisos, e não conseguia fixar em uma faixa específica de valores. Dado este enorme problema, a equipe optou por comprar uma balança de peso de alimentos, desmontar a mesma e utilizar a célula de carga + a base desta, como mostra a figura 6. A célula em questão é apresentada na figura 7, é de formato diferente da original e suporta até 10kg.
 
 [![Figura 6](https://www.imagemhost.com.br/images/2022/07/27/sensor-peso-2.md.jpg)](https://www.imagemhost.com.br/image/rTB4zI)
 [![Figura 7](https://www.imagemhost.com.br/images/2022/07/27/celula-carga.md.jpg)](https://www.imagemhost.com.br/image/rTBMxS)
