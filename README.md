@@ -1,6 +1,7 @@
 # Alimentador Automático de Gatos
 Este repositório apresenta o projeto de um alimentador automático de gatos, onde cada gato é reconhecido pelo sistema e possui uma porção específica de ração. O projeto foi desenvolvido para a displina de Projeto Integrador III, do curso de Engenharia Eletrônica do IFSC, pelos estudantes Enzzo Comassetto dos Santos e Jade Dutra Lopes.
 
+
 ## 1. A estrutura
 
    Para a estrutura do projeto, foi utilizado MDF para a construção do protótipo (figura 1) juntamente de um cano PVC tipo T de 50mm (figura 2) utilizado como o dispenser da ração para o pote. O conjunto foi montado conforme a figura 3.
@@ -11,7 +12,7 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
 
   De acordo com a progressão das atividades, foi preciso fazer algumas alterações físicas na estrutura. O sensor de peso (que será detalhado mais para frente) foi um grande obstáculo para o andamento do projeto. Esse requeriu mudanças no alimentador para que pudesse operar coerentemente. 
   
-### 1.1 Hélice
+## 1.1 Hélice
 
    Para empurrar a ração ao pote, foi feita em uma impressora 3D uma hélice helicoidal, fixada no servo motor. A ração cai sobre ela, e com o auxílio do motor, a quantidade especificada de ração cai sobre o pote. O design do helicóide foi retirado de um [site](https://www.thingiverse.com/thing:27854) com projeto similar, e ajustado para o tamanho do cano PVC usado. A figura 4 mostra as duas hélices que foram impressas, de 13 e 9cm, respectivamente. A de 13cm foi a utilizada no projeto, enquanto a de 9, como foi resultado de uma impressão falha, foi usada como teste para furos para o encaixe do motor.
   
@@ -30,9 +31,10 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
   
  ## 2.1 Microcontolador
  
-  O microcontrolador utilizado foi o **Atmega328P**, inicialmente acoplado em um Arduino Uno. A plataforma do Arduino foi muito útil para os testes iniciais dos sensores e do motor, possibilitando calibrações e detecções de possíveis erros de leitura.
+  O microcontrolador utilizado foi o **Atmega328P**, inicialmente acoplado em um Arduino Uno. A plataforma do Arduino foi muito útil para os testes iniciais dos sensores e do motor, possibilitando calibrações e detecções de possíveis erros de leitura. Ao fim dos testes individuais, todos sensores foram conectados juntos ao microcontrolador para a integração deles no código final.
   
    Após todos os sensores serem testados, o código foi adaptado para linguagem C no software Atmel Studio.
+
  
  ## 2.2 Sensores
  
@@ -44,7 +46,7 @@ Este repositório apresenta o projeto de um alimentador automático de gatos, on
   
  ### 2.2.2 Sensor RTC
  
-  O módulo *RTC DS1307* tem a função de controlar o tempo do dia para que o gato não coma mais de 1 porção em determinado período.
+  O módulo **RTC DS1307** tem a função de controlar o tempo do dia para que o gato não coma mais de 1 porção em determinado período.
   
  ### 2.2.3 Sensor de peso
  
@@ -61,3 +63,47 @@ Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apre
 
 Esta troca de célula e base foi essencial para o andamento do projeto, pois os resultados foram muito mais precisos e a faixa de valores não alterava conforme o tempo.
   
+## 2.3 A placa
+
+Foi feito o esquemático da placa utilizando o Atmega328P, juntamente dos sensores listados acima. O design de PCB pode ser visto na figura 8 abaixo.
+
+![Figura 8.png](https://www.imagemhost.com.br/images/2022/07/27/4.png)
+
+A placa tem dimensão de aproximadamente 9x9cm, para caber dentro da estrutura do alimentador. O modelo 3D dela é observado na figura 9.
+
+![Figura 9](https://www.imagemhost.com.br/images/2022/07/27/2.png)
+
+Infelizmente por falta de tempo, não foi possível a confecção da placa de circuito impresso do circuito proposto. Os testes foram feitos diretamente do shield do Arduino com o auxílio de uma *protoboard* com os sensores. Apesar da falta da PCI, os resultos foram satisfatórios.
+
+## 2.4 O código
+
+Como comentado anteriormente, primeiramente os códigos foram testados na IDE do Arduino, afim de realizar testes e calibrações. Após esta etapa, eles foram integrados e refeitos no Atmel Studio. Foram usadas as seguintes bibliotecas:
+
+```
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <util/delay.h>
+#include "utils.h"
+#include "spi.h"
+#include "mfrc522.h"
+#include "twi.h"
+```
+
+O código inteiro está disponível neste repositório.
+
+## 2.5 Custos
+
+Apesar de alguns sensores e materiais obtidos a partir da impressora 3D terem sido cedidos pelo departamento, o projeto deste protótipo de um alimentador automático de gatos gerou alguns custos para a equipe, como é observado na tabela abaixo.
+
+| Material | Custo | 
+| :------------------ | :----------: | 
+| MDF               | R$ 80,00        | 
+| Servo motor               | R$ 120,00        | 
+| Balança de alimentos               | R$ 40,00        | 
+| Total  | R$ 240,00 |
+
+Outras alternativas de materiais podem ser obtidas para a construção deste projeto.
