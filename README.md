@@ -1,10 +1,11 @@
 # Alimentador Automático de Gatos
-Este repositório apresenta o projeto de um alimentador automático de gatos, onde cada gato é reconhecido pelo sistema e possui uma porção específica de ração. O projeto foi desenvolvido para a displina de Projeto Integrador III, do curso de Engenharia Eletrônica do IFSC, pelos estudantes Enzzo Comassetto dos Santos e Jade Dutra Lopes.
+Este repositório tem como objetivo relatar as técnicas utilizadas para o desenvolvimentos do projeto de um alimentador automático de gatos. Cada felino é reconhecido por uma tag específica e possui uma porção pré-determinada de ração, baseada na idade e peso do animal. O projeto foi desenvolvido para a displina de Projeto Integrador III, do curso de Engenharia Eletrônica do IFSC Campus Florianópolis, pelos estudantes Enzzo Comassetto dos Santos e Jade Dutra Lopes.
 
 
 ## 1. A estrutura
 
-   Para a estrutura do projeto, foi utilizado MDF para a construção do protótipo (figura 1) juntamente de um cano PVC tipo T de 50mm (figura 2) utilizado como o dispenser da ração para o pote. O conjunto foi montado conforme a figura 3.
+   Para o alimentador, foi necessário desenvolver duas seções da estrutura: uma para o armazenamento da ração, e outra para suportar o sistema eletrônico. Utilizou-se um cano para a interligação das seções com o pote de ração fixado na estrutura.
+   De material, foi utilizado MDF para a construção do protótipo (figura 1) juntamente de um cano PVC tipo T de 50mm (figura 2) utilizado como o dispenser da ração para o pote. O conjunto foi montado conforme a figura 3.
 
 [![Figura 1](https://www.imagemhost.com.br/images/2022/07/26/estrutura-1.th.jpg)](https://www.imagemhost.com.br/image/rTlkOC)
 [![Figura 2](https://www.imagemhost.com.br/images/2022/07/26/estrutura-2.th.jpg)](https://www.imagemhost.com.br/image/rTlwlL)
