@@ -200,7 +200,7 @@ int main() {
 	OCR0A = 0;
 	
 	spi_init();
-	_delay_ms(1000);
+	//_delay_ms(1000);
 	mfrc522_init();
 	usart_init();
 	hx711_init();
@@ -209,7 +209,7 @@ int main() {
 	stdout = &uart_output;
 	_delay_ms(10);
 	
-	sei();
+	//sei();
 	
 	printf("Starting...\n");
 
@@ -221,7 +221,16 @@ int main() {
 	last_feeding_time[1] = timestamp - feeding_interval_timestamp;
 
 	uint8_t refill_target = 0;
-	
+	while(1){
+	baiti = mfrc522_get_serial(str);
+	if (baiti == CARD_FOUND) {
+		printf("Card detected: [");
+		for (uint8_t i = 0; i < MAX_LEN; i += 1) {
+			printf("%02X", str[i]);
+		}
+		printf("]\n");
+	}
+	}
     while (1) {
 		if (flag_tempo) {
 			flag_tempo = 0;
