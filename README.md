@@ -1,6 +1,13 @@
 # Alimentador Automático de Gatos
 Este repositório tem como objetivo relatar as técnicas utilizadas para o desenvolvimentos do projeto de um alimentador automático de gatos. Cada felino é reconhecido por uma tag específica e possui uma porção pré-determinada de ração, baseada na idade e peso do animal. O projeto foi desenvolvido para a displina de Projeto Integrador III, do curso de Engenharia Eletrônica do IFSC Campus Florianópolis, pelos estudantes Enzzo Comassetto dos Santos e Jade Dutra Lopes.
 
+Como referências para a concepção do projeto, foram utilizadas alguns produtos já existentes no mercado, observados nos links a seguir:
+
+[Link 1](https://www.amazon.com.br/PETODAY-Alimentador-Autom%C3%A1tico-Inteligente-Dispensador/dp/B08THNQ36R/ref=sr_1_8?crid=27I0CH6PFHF4P&keywords=automatic+feeder+cat&qid=1671628260&sprefix=cat+feeder%2Caps%2C192&sr=8-8)
+
+[Link 2](https://www.amazon.com.br/Prote%C3%A7%C3%A3o-Alimentos-Alimentador-Autom%C3%A1tico-C%C3%A2mera/dp/B0BC9765NC/ref=sr_1_9?crid=27I0CH6PFHF4P&keywords=automatic+feeder+cat&qid=1671628260&sprefix=cat+feeder%2Caps%2C192&sr=8-9&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147)
+
+[Link 3](https://www.amazon.com.br/Alimentadores-autom%C3%A1ticos-cronometrados-Dispensador-quantitativo/dp/B09TKS6W6D/ref=sr_1_6?crid=27I0CH6PFHF4P&keywords=automatic+feeder+cat&qid=1671628260&sprefix=cat+feeder%2Caps%2C192&sr=8-6&ufe=app_do%3Aamzn1.fos.6121c6c4-c969-43ae-92f7-cc248fc6181d)
 
 ## 1. A estrutura
 
@@ -19,6 +26,7 @@ Este repositório tem como objetivo relatar as técnicas utilizadas para o desen
   
 [![Figura 4](https://www.imagemhost.com.br/images/2022/07/26/helicoide-1.md.jpg)](https://www.imagemhost.com.br/image/rTlaZK)
 
+   Durante o andamento do projeto, a hélice quebrou no encontro do helicóide com a base. Para consertar, foi colocado um parafuso, que passava pela base e ia por dentro do helicóiode, prendendo a estrutura. Porém isto fez com que a hélice não ficasse perpendicular à base, dificultando a rotação do motor, uma vez que dependendo do ângulo entre o cano e a hélice, o atrito gerado era maior. Isto ocasionava um maior esforço do motor. Dessa forma, o encaixe do mesmo com o cano teve que ser feita de maneira mais cuidadosa.
 
 ### 1.2 Motor
 
@@ -57,28 +65,28 @@ Este repositório tem como objetivo relatar as técnicas utilizadas para o desen
   
 [![Figura 5](https://www.imagemhost.com.br/images/2022/07/27/base-cel.md.jpg)](https://www.imagemhost.com.br/image/rTBF9Y)
 
-Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apresentar resultados extremamentes imprecisos, e não conseguia fixar em uma faixa específica de valores. Dado este enorme problema, a equipe optou por comprar uma balança de peso de alimentos, desmontar a mesma e utilizar a célula de carga + a base desta, como mostra a figura 6. A célula em questão é apresentada na figura 7, é de formato diferente da original e suporta até 10kg.
+   Entretando, apesar de ter a estrutura para a célula, o sensor continuava a apresentar resultados extremamentes imprecisos, e não conseguia fixar em uma faixa específica de valores. Pesquisando mais a fundo, foram encontrados vários exemplos utilizando não apenas 1, mas 4 dessas células para formar uma balança, o que dificultaria mais ainda criar uma estrutura estável para medir poucas gramas. Dado este enorme problema, a equipe optou por comprar uma balança de peso de alimentos, desmontar a mesma e utilizar a célula de carga + a base desta, como mostra a figura 6. A célula em questão é apresentada na figura 7, é de formato diferente da original e suporta até 10kg. 
+   
+   Foi então calibrado o sensor, utilizando pesos já conhecidos até obtermos um indice de calibração aceitável.
 
 [![Figura 6](https://www.imagemhost.com.br/images/2022/07/27/sensor-peso-2.md.jpg)](https://www.imagemhost.com.br/image/rTB4zI)
 [![Figura 7](https://www.imagemhost.com.br/images/2022/07/27/celula-carga.md.jpg)](https://www.imagemhost.com.br/image/rTBMxS)
 
-Esta troca de célula e base foi essencial para o andamento do projeto, pois os resultados foram muito mais precisos e a faixa de valores não alterava conforme o tempo.
+   Esta troca de célula e base foi essencial para o andamento do projeto, pois os resultados foram muito mais precisos e a faixa de valores não alterava conforme o tempo.
   
 ## 2.3 A placa
 
-Foi feito o esquemático da placa utilizando o Atmega328P, juntamente dos sensores listados acima. O design de PCB pode ser visto na figura 8 abaixo.
+   Foi feito o esquemático da placa no software Altium, utilizando o Atmega328P como microcontrolador, juntamente dos sensores listados acima. O design de PCB pode ser visto na figura 8 abaixo.
 
-![Figura 8.png](https://www.imagemhost.com.br/images/2022/07/27/4.png)
+![Figura 8.png](https://www.imagemhost.com.br/images/2022/12/21/layout.png)
 
 A placa tem dimensão de aproximadamente 9,2x8cm, para caber dentro da estrutura do alimentador. O modelo 3D dela é observado na figura 9.
 
-![Figura 9](https://www.imagemhost.com.br/images/2022/07/27/2.png)
-
-Infelizmente por falta de tempo, não foi possível a confecção da placa de circuito impresso do circuito proposto. Os testes foram feitos diretamente do shield do Arduino com o auxílio de uma *protoboard* com os sensores. Apesar da falta da PCI, os resultos foram satisfatórios.
+![Figura 9](https://www.imagemhost.com.br/images/2022/12/21/3D_Superior.png)
 
 ## 2.4 O código
 
-Como comentado anteriormente, primeiramente os códigos foram testados na IDE do Arduino, afim de realizar testes e calibrações. Após esta etapa, eles foram integrados e refeitos no Atmel Studio. Foram usadas as seguintes bibliotecas:
+   Como comentado anteriormente, primeiramente os códigos foram testados na IDE do Arduino, afim de realizar testes e calibrações. Após esta etapa, eles foram integrados e refeitos no Atmel Studio. Foram usadas as seguintes bibliotecas:
 
 ```
 #include <avr/io.h>
@@ -94,11 +102,13 @@ Como comentado anteriormente, primeiramente os códigos foram testados na IDE do
 #include "twi.h"
 ```
 
+   Para a leitura do RFID estar sempre disponível e reconhecer uma tag cadastrada a qualquer momento, desligou-se as interrupções do motor até o momento que a tag seja lida pelo sensor.
+
 O código inteiro está disponível neste repositório.
 
-## 2.5 Custos
+## 3. Custos
 
-Apesar de alguns sensores e materiais obtidos a partir da impressora 3D terem sido cedidos pelo departamento, o projeto deste protótipo de um alimentador automático de gatos gerou alguns custos para a equipe, como é observado na tabela abaixo.
+   Apesar de alguns sensores e materiais obtidos a partir da impressora 3D terem sido cedidos pelo departamento, o projeto deste protótipo de um alimentador automático de gatos gerou alguns custos para a equipe, como é observado na tabela abaixo.
 
 | Material | Custo | 
 | :------------------ | :----------: | 
@@ -107,4 +117,24 @@ Apesar de alguns sensores e materiais obtidos a partir da impressora 3D terem si
 | Balança de alimentos               | R$ 40,00        | 
 | Total  | R$ 240,00 |
 
-Outras alternativas de materiais podem ser obtidas para a construção deste projeto.
+   Outras alternativas de materiais podem ser obtidas para a construção deste projeto.
+
+
+## 4. Conclusões
+
+   O alimentador de gatos, após tudo ser montado, ficou como mostra as figuras 10 e 11 abaixo.
+   
+   ![Figura 10](https://www.imagemhost.com.br/images/2022/12/21/IMG_79988478689c1169e444.jpg)
+   
+   ![Figura 11](https://www.imagemhost.com.br/images/2022/12/21/IMG_8003.jpg)
+   
+   A figura 11 mostra o alimentador com a hélice já acoplada, e a figura 10 mostra como a placa foi fixada dentro da estrutura.
+   
+   [![Vídeo do funcionamento do alimentador]](https://youtube.com/shorts/Q7Cq7R1CHkE?feature=share)
+
+   O projeto apresenteu resultados satisfatórios quando em ambiente controlado. Para funcionamento completo, algumas modificações seriam necessárias, como:
+   
+   - O RFID utilizado deve possuir um alcance maior (como 10 cm) para a melhor detecção dos gatos;
+   - Possuir uma hélice mais resistente, para aguentar o peso da ração sobre ela, sem atrapalhar seu funcionamento;
+   - Ser adicionado alguma proteção caso o motor trave;
+   - Para um produto final, alguns custos poderiam ser reduzidos, como o material utilizado para a estrutura e o motor da hélice.
